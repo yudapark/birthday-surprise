@@ -1,10 +1,10 @@
 # Birthday Surprise — versi polished 💙
 
 ## Urutan pengalaman
-Opening → pertanyaan → story → gallery → video → quiz → memory → password → surat → final surprise.
+Opening → pertanyaan → story → gallery → video → quiz → memory → password → surat → surprise.
 
 ## Yang sudah dibenahi
-- Reveal surat dan final surprise sekarang dimulai **saat section dibuka**, bukan saat website pertama kali loading.
+- Reveal surat dan surprise sekarang dimulai **saat section dibuka**, bukan saat website pertama kali loading.
 - Navigasi tidak bisa loncat ke bagian yang belum dibuka.
 - Musik tidak lagi mengaku sedang play kalau browser gagal memutarnya.
 - Gallery, timeline, dan video punya fallback kalau asset belum dimasukkan.
@@ -19,6 +19,6 @@ Opening → pertanyaan → story → gallery → video → quiz → memory → p
 - `assets/videos/our-story.mp4`
 
 ## Data personal
-Edit `js/config.js`: nama, password, tanggal, timeline, gallery, pertanyaan, surat, dan pesan final.
+Edit `js/config.js`: nama, password, tanggal, timeline, gallery, pertanyaan, surat, dan pesan.
 
 > Catatan: password di website statis bukan keamanan sungguhan. Siapa pun yang membuka source bisa melihatnya. Ini cuma puzzle romantis, bukan brankas negara.
