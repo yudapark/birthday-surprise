@@ -3,7 +3,7 @@
 // + tap-anywhere heart burst
 // ============================================
 
-const AMBIENT_EMOTES = ['💙', '💕', '💗', '💖', '✨', '🩵', '💫', '🤍', '❤️', '💝', '🌸', '💞'];
+const AMBIENT_EMOTES = ['🤍', '💕', '💗', '💖', '✨', '🩵', '💫', '🤍', '❤️', '💝', '🌸', '💞'];
 const BURST_EMOTES = ['❤️', '💖', '💕', '💗', '✨', '💙', '💝', '💞', '🌸'];
 
 let ambientIntervalId = null;
