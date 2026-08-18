@@ -5,7 +5,7 @@
 const birthdayConfig = {
     // Personal Info
     girlfriendName: "Sayangkuu",
-    yourName: "Akuuuu Sayang muuu",
+    yourName: "Yudaa",
 
     // Password untuk unlock    
     password: "190810",
@@ -23,8 +23,8 @@ const birthdayConfig = {
     // LOVE CALCULATOR CONFIG
     // ============================================
     loveCalculator: {
-        defaultName1: "Sayangku",
-        defaultName2: "Akuu",
+        defaultName1: "Nama cewe",
+        defaultName2: "Nama cowo",
         
         messages: {
             perfect: "💕 Perfect Match! Kalian memang ditakdirkan bersama! 💕",
