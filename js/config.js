@@ -102,20 +102,37 @@ const birthdayConfig = {
     ],
 
     // Love Letter
-    loveLetter: `Sayangku,
+    loveLetter: `Sayangkuuu, cintakuuuu 😘🤍🥰,
 
-Hari ini adalah hari yang sangat istimewa. Bukan hanya karena hari ulang tahunmu, tapi karena hari ini adalah hari dimana aku bisa merayakan keberadaanmu di dunia ini.
+19 Agustus 2003 🎂✨, lahirlah seorang perempuan yang waktu itu mungkin belum tahu kalau suatu hari nanti bakal jadi seseorang yang begitu berarti buat aku 🥹🤍. Dan sekarang, 19 Agustus 2026 🎉🎂, kamu udah sampai di umur 23 tahun 🥰❤️.
 
-Setiap hari yang aku lewati bersamamu adalah hari yang berharga. Senyummu, tawamu, cara kamu memandang dunia — semuanya membuatku jatuh cinta setiap hari.
+Selamat ulang tahun yaaa, sayangkuu 😘🎂🎉🤍🥳
 
-Terima kasih telah menjadi bagian dari hidupku. Terima kasih untuk semua momen indah yang sudah kita bagi bersama.
+Nggak kerasa yaaa 🥹⏳, hari ini kamu udah 23 tahun 🎂🤍. Dari sekian banyak hari yang udah kamu lewati sampai sekarang 🌷✨, aku bersyukur banget karena ada beberapa di antaranya yang bisa aku lewati bareng kamu 🫶🏻🥰❤️.
 
-Di hari ulang tahunmu ini, aku hanya ingin kamu tahu bahwa aku sangat mencintaimu. Lebih dari kata-kata bisa ungkapkan.
+Aku suka semua hal tentang kamu 😚🤍. Senyum kamu 😊, ketawa kamu 😂🤍, cara kamu cerita 🗣️🥰, cara kamu ngambek 😤🤣, bahkan tingkah kamu yang kadang bikin aku geleng-geleng kepala sendiri 🤦🏻‍♂️😂. Tapi justru hal-hal kecil itu yang bikin kamu jadi kamu 🥹❤️, dan itu yang aku suka dari kamu 😘🤍.
 
-Selamat ulang tahun, sayangku. Semoga semua impianmu menjadi kenyataan.
+Makasih yaaa sayang 🥺🤍, udah hadir di hidup aku 🫶🏻✨. Makasih buat semua waktu ⏰❤️, perhatian 🥰, cerita 📖🤍, tawa 😂, dan momen-momen kecil yang udah kita lewati bareng 🥹🫶🏻. Mungkin buat orang lain itu hal biasa 🤷🏻‍♂️, tapi buat aku semuanya punya tempat sendiri di hati aku ❤️🔐.
 
-Dengan segenap cinta,
-[Sayanggmu]`,
+Aku juga sadar aku bukan orang yang selalu sempurna 🥹🤍. Kadang mungkin aku bikin kamu kesel 😤, bikin kamu kecewa 😔, atau ada hal-hal yang belum bisa aku lakuin dengan baik 🙏🏻🥺. Tapi satu hal yang aku harap kamu tahu ❤️, aku selalu sayang sama kamu 🥰🤍 dan aku selalu berusaha buat jadi lebih baik buat kita 🫶🏻✨.
+
+Di umur kamu yang ke-23 ini 🎂🎉, aku cuma berharap semoga kamu selalu sehat 🤍🙏🏻, selalu bahagia 🥰🌷, dimudahkan dalam segala urusan 🤲🏻✨, dan semua hal yang kamu impikan bisa pelan-pelan jadi kenyataan 🌟💭❤️.
+
+Kalau nanti ada hari yang berat 😔🌧️, semoga kamu tetap ingat kalau kamu nggak harus menghadapi semuanya sendirian 🫂🤍. Aku mungkin nggak selalu punya solusi buat semua masalah kamu 🥺, tapi aku mau tetap ada buat dengerin cerita kamu 👂🏻🤍, nemenin kamu 🫶🏻, bikin kamu ketawa lagi 😂❤️, dan ngeliat kamu terus berkembang 🌱✨.
+
+Sekali lagi, selamat ulang tahun yaaa, sayangkuuu 😘🎂🎉🥳🤍❤️.
+
+Terima kasih karena sudah lahir pada 19 Agustus 2003 👶🏻🎂✨ dan akhirnya, entah bagaimana caranya 🥹🤍, bisa sampai menjadi seseorang yang aku cintai hari ini ❤️🔐.
+
+Aku sayang kamu 😘🤍. Hari ini ❤️, besok 🥰, dan semoga masih terus sampai banyak ulang tahun kamu berikutnya 🎂🎉🤍🫶🏻.
+
+Semoga kita masih bisa bikin banyak cerita bareng 📸🥰, ketawa bareng 😂🤍, jalan-jalan bareng 🚗🌅, dan ngelewatin banyak hal bareng-bareng 🫂❤️✨.
+
+Aku cinta kamu, sayangkuu 😘❤️🤍🥰.
+
+Dengan segenap cinta ❤️🔐,
+
+[Sayanggmu 🤍🥰🫶🏻],
 
     // Final message
     finalMessage: "Semoga hari ini menjadi awal dari banyak hal baik yang akan datang.",
