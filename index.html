@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise</title>
+
+    <!-- Fonts - Romantic modern -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/games.css">
+    <link rel="stylesheet" href="css/love-calculator.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- ==================== BACKGROUND PARTICLES ==================== -->
+    <canvas id="bgCanvas"></canvas>
+
+    <!-- ==================== PAGE LOADER ==================== -->
+    <div id="pageLoader">
+        <div class="loader-container">
+            <!-- Heart berdenyut -->
+            <div class="loader-heart-wrapper">
+                <div class="loader-heart-pulse">
+                    <span class="loader-heart-icon">💙</span>
+                </div>
+                <div class="loader-heart-ring"></div>
+                <div class="loader-heart-ring delay-1"></div>
+                <div class="loader-heart-ring delay-2"></div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="loader-progress-wrapper">
+                <div class="loader-progress-bar">
+                    <div class="loader-progress-fill" id="loaderProgressFill"></div>
+                </div>
+                <div class="loader-progress-text" id="loaderProgressText">0%</div>
+            </div>
+
+            <!-- Loading Messages -->
+            <div class="loader-messages" id="loaderMessages">
+                <p class="loader-message active">Menyiapkan kejutan spesial... 💕</p>
+                <p class="loader-message">Mengumpulkan semua kenangan... 📸</p>
+                <p class="loader-message">Menambahkan taburan cinta... 💗</p>
+                <p class="loader-message">Merapikan semuanya... ✨</p>
+                <p class="loader-message">Hampir selesai... 🥰</p>
+                <p class="loader-message">Siap untuk kamu! 💖</p>
+            </div>
+
+            <!-- Floating Hearts Background -->
+            <div class="loader-hearts-bg" id="loaderHeartsBg"></div>
+        </div>
+    </div>
+
+    <!-- ==================== SECTION: OPENING ==================== -->
+    <section id="section-opening" class="section opening-section active">
+        <div class="opening-container">
+            <div class="opening-content">
+                <span class="cute-tag" id="openingTag">✨ khusus buat kamu sayangku ✨</span>
+                <p class="opening-line1" id="openingLine1">Haii, Sayangggkuuu ♥</p>
+                <p class="opening-line2" id="openingLine2">Ada sesuatu yang sudah aku siapkan buat ayangg.</p>
+                <button class="btn-primary btn-opening wiggle-hover" id="btnOpening">
+                    Buka pelan-pelan <span class="emote">💌</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: MINI QUESTION ==================== -->
+    <section id="section-question" class="section question-section">
+        <div class="container">
+            <div class="question-wrapper">
+                <!-- Decorative Elements -->
+                <div class="question-decorations">
+                    <span class="deco-star">✨</span>
+                    <span class="deco-star delay-1">⭐</span>
+                    <span class="deco-star delay-2">💫</span>
+                    <span class="deco-heart">💕</span>
+                    <span class="deco-heart delay-1">💗</span>
+                    <span class="deco-heart delay-2">💖</span>
+                </div>
+
+                <div class="question-box glass">
+                    <!-- Header -->
+                    <div class="question-header">
+                        <span class="question-badge">
+                            <span class="badge-icon">🤭</span>
+                            Sebentar...
+                        </span>
+                        <h2 class="question-title">
+                            <span class="title-line">Kamu tahu nggak</span>
+                            <span class="title-line gradient-text">hari ini hari apa?</span>
+                        </h2>
+                    </div>
+
+                    <!-- Options -->
+                    <div class="question-options" id="questionOptions">
+                        <button class="btn-option-premium" data-answer="wrong">
+                            <span class="option-letter">A</span>
+                            <span class="option-text">Hari biasa</span>
+                            <span class="option-icon">😐</span>
+                        </button>
+                        <button class="btn-option-premium" data-answer="wrong">
+                            <span class="option-letter">B</span>
+                            <span class="option-text">Hari Senin</span>
+                            <span class="option-icon">📅</span>
+                        </button>
+                        <button class="btn-option-premium" data-answer="correct">
+                            <span class="option-letter">C</span>
+                            <span class="option-text">Hari ulang tahun seseorang yang sangat spesial</span>
+                            <span class="option-icon">🎂💕</span>
+                        </button>
+                    </div>
+
+                    <!-- Feedback -->
+                    <div class="question-feedback-wrapper" id="questionFeedbackWrapper">
+                        <div class="question-feedback" id="questionFeedback"></div>
+                    </div>
+
+                    <!-- Next Button -->
+                    <button class="btn-primary btn-next hidden" id="btnAfterQuestion">
+                        <span class="btn-text">Lanjut</span>
+                        <span class="btn-arrow">➡️</span>
+                    </button>
+                </div>
+
+                <!-- Floating particles -->
+                <div class="question-particles">
+                    <span class="q-particle">💙</span>
+                    <span class="q-particle delay-1">✨</span>
+                    <span class="q-particle delay-2">💕</span>
+                    <span class="q-particle delay-3">🌟</span>
+                    <span class="q-particle delay-4">💗</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== SECTION: OUR STORY ==================== -->
+    <section id="section-story" class="section story-section">
+        <div class="container">
+            <div class="story-header">
+                <h2 class="section-title"><span class="emote-badge">📖</span>Our Story<span class="emote-badge">💙</span></h2>
+                <p class="section-subtitle">Kalau dipikir-pikir, ternyata perjalanan kita sudah sejauh ini.</p>
+            </div>
+            <div class="timeline-container" id="timelineContainer">
+                <!-- Timeline akan di-render oleh JS -->
+            </div>
+            <button class="btn-primary section-continue" data-next="3" type="button">Lanjut lihat kenangan <span class="emote">📸</span></button>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: MEMORY GALLERY ==================== -->
+    <section id="section-gallery" class="section gallery-section">
+        <div class="container">
+            <div class="gallery-header">
+                <h2 class="section-title"><span class="emote-badge">📸</span>Little Memories<span class="emote-badge">💕</span></h2>
+                <p class="section-subtitle">Beberapa momen yang mungkin sederhana, tapi berarti banget buat aku. 🤍</p>
+            </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery akan di-render oleh JS -->
+            </div>
+            <button class="btn-primary section-continue" data-next="4" type="button">Ada satu video... <span class="emote">🎬</span></button>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: VIDEO ==================== -->
+    <section id="section-video" class="section video-section">
+        <div class="container">
+            <div class="video-header">
+                <h2 class="section-title"><span class="emote-badge">🎬</span>There's Something I Want You To See</h2>
+                <p class="section-subtitle">Karena beberapa cerita lebih enak diceritakan lewat video. 🎞️💙</p>
+            </div>
+            <div class="video-wrapper">
+                <video id="storyVideo" class="story-video" controls preload="metadata">
+                    <source src="assets/videos/our-story.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung video.
+                </video>
+            </div>
+            <button class="btn-primary section-continue" data-next="5" type="button">Sekarang kita main 😏 <span class="emote">🧩</span></button>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: MINI GAME 1 - QUIZ ==================== -->
+    <section id="section-quiz" class="section quiz-section">
+        <div class="container">
+            <div class="quiz-header">
+                <h2 class="section-title"><span class="emote-badge">🧩</span>Guess Me<span class="emote-badge">😏</span></h2>
+                <p class="section-subtitle">Seberapa kenal kamu denganku? Ayo buktikan! 🎯</p>
+            </div>
+            <div class="quiz-container" id="quizContainer">
+                <!-- Quiz akan di-render oleh JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: LOVE CALCULATOR ==================== -->
+    <section id="section-lovecalc" class="section lovecalc-section">
+        <div class="container">
+            <div class="lovecalc-container">
+                <div class="lovecalc-header">
+                    <h2 class="section-title">
+                        <span class="emote-badge">💕</span>
+                        Love Calculator
+                        <span class="emote-badge">💕</span>
+                    </h2>
+                    <p class="section-subtitle">Coba kita lihat seberapa cocok kita yaa... 😊💗</p>
+                </div>
+                
+                <div id="loveCalcContainer">
+                    <!-- Akan di-render oleh JS -->
+                </div>
+                
+                <button class="btn-primary section-continue" data-next="7" type="button" style="margin-top: 30px;">
+                    Lanjut <span class="emote">➡️</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: MINI GAME 3 - UNLOCK ==================== -->
+    <section id="section-unlock" class="section unlock-section">
+        <div class="container">
+            <div class="unlock-content">
+                <span class="unlock-icon">🔐</span>
+                <h2 class="section-title">One Last Thing... <span class="emote-badge">🥺</span></h2>
+                <p class="unlock-description">Masukkan sesuatu yang cuma kita berdua tahu. 🤫💕</p>
+                <div class="unlock-input-wrapper">
+                    <input type="password" id="unlockInput" class="unlock-input" placeholder="Masukkan password...">
+                    <button class="btn-primary wiggle-hover" id="btnUnlock">Buka <span class="emote">🔓</span></button>
+                </div>
+                <div class="unlock-feedback" id="unlockFeedback"></div>
+                <div class="unlock-progress hidden" id="unlockProgress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text">Membuka...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: LOVE LETTER ==================== -->
+    <section id="section-letter" class="section letter-section">
+        <div class="container">
+            <div class="letter-content">
+                <h2 class="section-title">Now, Let Me Say Something Seriously. <span class="emote-badge">💌</span></h2>
+                <div class="letter-paper" id="letterPaper">
+                    <div class="letter-body" id="letterBody">
+                        <!-- Surat akan di-render oleh JS -->
+                    </div>
+                </div>
+                <button class="btn-primary btn-next-letter hidden" id="btnAfterLetter">Lanjut <span class="emote">➡️</span></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: FINAL SURPRISE ==================== -->
+    <section id="section-final" class="section final-section">
+        <div class="final-container">
+            <div class="final-content">
+                <p class="final-prelude">Tapi...</p>
+                <p class="final-prelude-delay">Masih ada satu hal lagi.</p>
+                <div class="final-surprise hidden" id="finalSurprise">
+                    <h1 class="final-title shimmer-text">HAPPY BIRTHDAY 🎉</h1>
+                    <h2 class="final-name" id="finalName">Sayangggkuuu😘💕🎉🎉</h2>
+                    <p class="final-message">Mudah-mudahan hari ini menjadi awal dari banyak hal baik yang akan datang.😘😍</p>
+                    <div class="final-photo" id="finalPhoto">
+                        <img src="assets/images/photo01.jpg" alt="Foto terbaik" loading="lazy">
+                    </div>
+                    <p class="final-signoff">I love you, so so much. 💌</p>
+                </div>
+            </div>
+        </div>
+        <canvas id="confettiCanvas"></canvas>
+    </section>
+
+    <!-- ==================== MODAL ==================== -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content" id="modalContent">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- ==================== MUSIC BUTTON ==================== -->
+    <button class="music-toggle" id="musicToggle" aria-label="Toggle music">
+        <span class="music-icon">🔇</span>
+    </button>
+
+    <!-- ==================== NAVIGATION INDICATOR ==================== -->
+    <div class="nav-indicator" id="navIndicator">
+        <!-- Akan di-render oleh JS -->
+    </div>
+
+    <!-- ==================== AMBIENT BACKGROUND HEARTS ==================== -->
+    <div id="ambientLayer"></div>
+
+    <!-- ==================== FOOTER SIGNATURE ==================== -->
+    <p class="made-with-love">made with <span class="heartbeat">💙</span> just for you</p>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="js/config.js"></script>
+    <script src="js/background-particles.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/music.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/timeline.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/confetti.js"></script>
+    <script src="js/ambient-love.js"></script>
+
+    <script src="js/games/quiz.js"></script>
+    <script src="js/games/love-calculator.js"></script>
+    <script src="js/games/unlock.js"></script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
