@@ -6,11 +6,11 @@ const sections = [
     'section-opening', 
     'section-question', 
     'section-story', 
-    'section-gallery', 
+    'section-gallery',
+    'section-video',
     'section-quiz', 
     'section-lovecalc',
     'section-unlock',
-    'section-video',
     'section-letter', 
     'section-final'
 ];
