@@ -132,7 +132,7 @@ Aku cinta kamu, sayangkuu 😘❤️🤍🥰.
 
 Dengan segenap cinta ❤️🔐,
 
-[Sayanggmu 🤍🥰🫶🏻],
+[Sayanggmu 🤍🥰🫶🏻]`,
 
     // Final message
     finalMessage: "Semoga hari ini menjadi awal dari banyak hal baik yang akan datang.",
