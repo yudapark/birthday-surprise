@@ -11,7 +11,7 @@ let quizState = {
 };
 
 const QUIZ_SUCCESS_MSGS = [
-    '✅ Yes! Kamu emang paling ngerti aku. 🥰',
+    '✅ Yes! Kamu emang yang ngerti aku. 🥰',
     '✅ Betul banget! Kamu jago deh 😆💙',
     '✅ Correct! Cieee tau banget ✨',
     '✅ Bener! Makin sayang deh sama kamu 💕'
