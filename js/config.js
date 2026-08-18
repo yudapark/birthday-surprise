@@ -67,7 +67,7 @@ const birthdayConfig = {
         {
             date: "4",
             title: "Hari-Hari Kita Bersama",
-            description: "SSetiap hari bersamamu adalah anugerah.",
+            description: "Setiap hari bersamamu adalah anugerah.",
             image: "assets/images/photo04.jpg"
         }
     ],
