@@ -71,6 +71,7 @@ function navigateToSection(index, force = false) {
     if (!force && index > highestUnlockedSection) return;
 
     isTransitioning = true;
+    const goingForward = index > currentSection;
     const currentEl = document.getElementById(sections[currentSection]);
     const targetEl = document.getElementById(sections[index]);
     if (!targetEl) { isTransitioning = false; return; }
@@ -79,29 +80,53 @@ function navigateToSection(index, force = false) {
         stopConfetti();
     }
 
-    if (document.getElementById('modalOverlay')?.classList.contains('active')) {
+    const exitName = goingForward ? 'sectionExitForward' : 'sectionExitBack';
+    const enterName = goingForward ? 'sectionEnterForward' : 'sectionEnterBack';
+    const exitMs = 420;
+    const enterMs = 720;
+
+    // 1) Animate current section out
+    if (currentEl) {
+        currentEl.classList.add('is-leaving');
+        currentEl.style.animation = 'none';
+        void currentEl.offsetWidth;
+        currentEl.style.animation = `${exitName} ${exitMs}ms cubic-bezier(0.4, 0, 0.2, 1) forwards`;
     }
 
-    currentEl?.classList.remove('active');
-    targetEl.classList.add('active');
-    targetEl.style.animation = 'none';
-    requestAnimationFrame(() => {
-        targetEl.style.animation = 'sectionEntrance 0.6s ease forwards';
-    });
-
-    currentSection = index;
-    window.currentSection = currentSection;
-    updateNavIndicator(index);
-
-    if (index === 8 && typeof startLetterReveal === 'function') startLetterReveal();
-    if (index === 9 && typeof startFinalSurprise === 'function') startFinalSurprise();
-    if (index === 4 && typeof initVideoFallback === 'function') initVideoFallback();
-
-    const timings = birthdayConfig.timings || { sectionTransition: 520 };
     setTimeout(() => {
-        if (typeof triggerReveal === 'function') triggerReveal();
-        isTransitioning = false;
-    }, timings.sectionTransition || 520);
+        // 2) Hide old section
+        if (currentEl) {
+            currentEl.classList.remove('active', 'is-leaving');
+            currentEl.style.animation = '';
+            currentEl.style.opacity = '';
+            currentEl.style.transform = '';
+            currentEl.style.filter = '';
+        }
+
+        // 3) Show & animate new section in
+        targetEl.classList.add('active', 'is-entering');
+        targetEl.style.animation = 'none';
+        void targetEl.offsetWidth;
+        targetEl.style.animation = `${enterName} ${enterMs}ms cubic-bezier(0.22, 1, 0.36, 1) forwards`;
+
+        currentSection = index;
+        window.currentSection = currentSection;
+        updateNavIndicator(index);
+
+        if (index === 8 && typeof startLetterReveal === 'function') startLetterReveal();
+        if (index === 9 && typeof startFinalSurprise === 'function') startFinalSurprise();
+        if (index === 4 && typeof initVideoFallback === 'function') initVideoFallback();
+
+        setTimeout(() => {
+            targetEl.classList.remove('is-entering');
+            targetEl.style.animation = '';
+            targetEl.style.opacity = '1';
+            targetEl.style.transform = '';
+            targetEl.style.filter = '';
+            if (typeof triggerReveal === 'function') triggerReveal();
+            isTransitioning = false;
+        }, enterMs);
+    }, exitMs);
 }
 
 function updateNavIndicator(index) {

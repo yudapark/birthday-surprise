@@ -16,8 +16,8 @@
     align-items: center;
     padding: var(--space-sm) var(--space-lg);
     background: var(--glass-white);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: var(--radius-full);
     border: 1px solid var(--glass-border);
     box-shadow: var(--shadow-glass);
@@ -70,8 +70,8 @@
     height: 48px;
     border-radius: 50%;
     background: var(--glass-white);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--glass-border);
     box-shadow: var(--shadow-glass);
     cursor: pointer;
@@ -118,8 +118,8 @@
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.8);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     z-index: 1000;
     display: none;
     align-items: center;
@@ -136,8 +136,8 @@
 
 .modal-content {
     background: var(--glass-white);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border-radius: var(--radius-lg);
     max-width: 700px;
     width: 100%;
@@ -301,8 +301,8 @@
 .timeline-content {
     flex: 1;
     background: var(--glass-white);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: var(--space-lg);
     border-radius: var(--radius-md);
     border: 1px solid var(--glass-border);
@@ -339,9 +339,13 @@
 .timeline-img {
     margin-top: var(--space-sm);
     width: 100%;
-    max-height: 200px;
-    object-fit: cover;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    object-position: center;
     border-radius: var(--radius-sm);
+    display: block;
+    background: rgba(77, 166, 255, 0.06);
 }
 
 /* ============================================
@@ -349,8 +353,8 @@
    ============================================ */
 .letter-paper {
     background: var(--glass-white);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: var(--radius-lg);
     padding: var(--space-2xl) var(--space-xl);
     border: 1px solid var(--glass-border);
@@ -383,10 +387,14 @@
 .letter-body .line {
     opacity: 0;
     transform: translateY(12px);
-    animation: fadeUp 0.5s ease forwards;
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
     to {
         opacity: 1;
         transform: translateY(0);
@@ -415,69 +423,74 @@
 }
 
 .final-content {
-    color: var(--white);
+    color: var(--deep-blue);
     max-width: 600px;
+    margin: 0 auto;
 }
 
 .final-prelude,
 .final-prelude-delay {
     font-family: var(--font-elegant);
-    font-size: clamp(1.25rem, 3vw, 1.6rem);
-    font-weight: 400;
+    font-size: clamp(1.25rem, 3vw, 1.65rem);
+    font-weight: 500;
     font-style: italic;
-    color: var(--deep-blue);
+    color: #1a5f9e;
     opacity: 0;
-    animation: fade-up 0.8s ease forwards;
-    text-shadow: 0 1px 8px rgba(77, 166, 255, 0.2);
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.8);
 }
 
 .final-prelude-delay {
-    animation-delay: 0.5s;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .final-title {
     font-family: var(--font-romantic);
-    font-size: clamp(3.2rem, 9vw, 5.5rem);
+    font-size: clamp(3rem, 9vw, 5.2rem);
     font-weight: 400;
     letter-spacing: 2px;
     margin: 16px 0 8px;
     line-height: 1.15;
-    background: linear-gradient(135deg, #1a5f9e 0%, #4DA6FF 35%, #FF6B9D 65%, #1a5f9e 100%);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 2px 10px rgba(77, 166, 255, 0.35)) drop-shadow(0 0 18px rgba(255, 107, 157, 0.25));
-    animation: shimmerText 5s ease-in-out infinite;
+    color: #1a5f9e;
+    -webkit-text-fill-color: #1a5f9e;
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    text-shadow: 0 2px 12px rgba(77, 166, 255, 0.35), 0 0 24px rgba(255, 107, 157, 0.2);
+    animation: none;
 }
 
-@keyframes shimmerText {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+/* Override .shimmer-text on final title so text stays visible */
+.final-title.shimmer-text {
+    color: #1a5f9e !important;
+    -webkit-text-fill-color: #1a5f9e !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    animation: none !important;
 }
 
 .final-name {
     font-family: var(--font-romantic);
     font-size: clamp(2.4rem, 6vw, 3.8rem);
     font-weight: 400;
-    color: #FF4D6D;
+    color: #e91e63;
+    -webkit-text-fill-color: #e91e63;
     margin-bottom: var(--space-md);
     line-height: 1.2;
-    text-shadow: 0 2px 12px rgba(255, 107, 157, 0.35), 0 0 24px rgba(77, 166, 255, 0.2);
+    text-shadow: 0 2px 10px rgba(233, 30, 99, 0.25);
 }
 
 .final-message {
     font-family: var(--font-elegant);
     font-size: clamp(1.05rem, 2.2vw, 1.25rem);
-    font-weight: 400;
+    font-weight: 500;
     font-style: italic;
-    color: var(--deep-blue);
+    color: #1a5f9e;
     max-width: 520px;
     margin: 0 auto var(--space-lg);
     line-height: 1.65;
-    text-shadow: 0 1px 6px rgba(77, 166, 255, 0.15);
+    text-shadow: 0 1px 2px rgba(255,255,255,0.6);
 }
 
 .final-photo {
@@ -505,13 +518,15 @@
     font-family: var(--font-romantic);
     font-size: clamp(1.5rem, 3.5vw, 2rem);
     font-weight: 400;
-    color: #FF4D6D;
+    color: #e91e63;
+    -webkit-text-fill-color: #e91e63;
     opacity: 0;
-    text-shadow: 0 2px 10px rgba(255, 107, 157, 0.3);
+    text-shadow: 0 2px 10px rgba(233, 30, 99, 0.25);
 }
 
-.final-signoff.reveal {
-    animation: fade-up 0.8s ease forwards;
+.final-signoff.reveal,
+.final-signoff.is-visible {
+    opacity: 1;
 }
 
 /* ============================================

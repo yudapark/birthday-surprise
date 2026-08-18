@@ -108,7 +108,7 @@ function createLoaderHearts() {
     if (!container) return;
     
     const hearts = ['💙', '💕', '💗', '💖', '💝', '❤️', '✨', '🩵'];
-    const count = 20;
+    const count = 10;
     
     for (let i = 0; i < count; i++) {
         const heart = document.createElement('span');
@@ -154,7 +154,7 @@ function setupOpening() {
 
     [tag, line1, line2, btn].forEach((el, i) => {
         if (el) setTimeout(() => { 
-            el.style.animation = `fade-up .7s ease ${i * .18}s forwards`; 
+            el.style.animation = `fade-up .9s cubic-bezier(0.22, 1, 0.36, 1) ${i * .22}s forwards`; 
         }, 100 + i * 150);
     });
 
@@ -233,10 +233,10 @@ function startLetterReveal() {
     const text = birthdayConfig.loveLetter.replace('[Sayanggmu]', birthdayConfig.yourName);
     const lines = text.split('\n');
     body.innerHTML = lines.map((line, i) =>
-        line.trim() ? `<div class="line" style="animation-delay:${i * .1}s">${escapeHTML(line)}</div>` : '<br>'
+        line.trim() ? `<div class="line" style="animation-delay:${i * .15}s">${escapeHTML(line)}</div>` : '<br>'
     ).join('');
 
-    const delay = Math.max(1200, lines.length * 100 + 900);
+    const delay = Math.max(1500, lines.length * 150 + 1100);
     setTimeout(() => next.classList.remove('hidden'), delay);
 }
 
@@ -267,7 +267,7 @@ function startFinalSurprise() {
     if (!surprise) return;
 
     [prelude, preludeDelay].forEach((el, i) => {
-        if (el) setTimeout(() => el.style.animation = 'fade-up .8s ease forwards', 250 + i * 450);
+        if (el) setTimeout(() => el.style.animation = 'fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) forwards', 320 + i * 520);
     });
 
     setTimeout(() => {
@@ -275,7 +275,7 @@ function startFinalSurprise() {
         surprise.style.animation = 'bounce-in-love .9s cubic-bezier(.34,1.56,.64,1) forwards';
         startConfetti();
         createFloatingHearts();
-        if (signoff) setTimeout(() => signoff.style.animation = 'fade-up .8s ease forwards', 1000);
+        if (signoff) setTimeout(() => signoff.style.animation = 'fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) forwards', 1200);
     }, 1500);
 }
 
@@ -318,10 +318,10 @@ function createRipple(element) {
 
 function createFloatingHearts() {
     const hearts = ['❤️', '💕', '💗', '✨'];
-    for (let i = 0; i < 12; i++) setTimeout(() => {
+    for (let i = 0; i < 8; i++) setTimeout(() => {
         const heart = document.createElement('div');
         heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
-        heart.style.cssText = `position:fixed;left:${10 + Math.random()*80}%;bottom:-20px;font-size:${16+Math.random()*20}px;z-index:5;pointer-events:none;animation:float-heart ${3+Math.random()*3}s ease forwards`;
+        heart.style.cssText = `position:fixed;left:${10 + Math.random()*80}%;bottom:-20px;font-size:${16+Math.random()*20}px;z-index:5;pointer-events:none;animation:float-heart ${4.5+Math.random()*3}s cubic-bezier(0.22, 1, 0.36, 1) forwards`;
         document.body.appendChild(heart);
         setTimeout(() => {
             if (heart.parentNode) heart.remove();

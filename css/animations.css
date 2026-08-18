@@ -11,11 +11,11 @@
 @keyframes fade-up {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(12px) scale(0.985);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
 }
 
@@ -90,14 +90,14 @@
 @keyframes scale-in-bounce {
     0% {
         opacity: 0;
-        transform: scale(0.3);
+        transform: scale(0.92);
     }
-    50% {
+    60% {
         opacity: 1;
-        transform: scale(1.08);
+        transform: scale(1.025);
     }
-    70% {
-        transform: scale(0.95);
+    85% {
+        transform: scale(0.995);
     }
     100% {
         opacity: 1;
@@ -109,14 +109,14 @@
 @keyframes bounce-in {
     0% {
         opacity: 0;
-        transform: scale(0.3) translateY(20px);
+        transform: scale(0.9) translateY(10px);
     }
-    50% {
+    60% {
         opacity: 1;
-        transform: scale(1.08) translateY(-4px);
+        transform: scale(1.03) translateY(-2px);
     }
-    70% {
-        transform: scale(0.95) translateY(2px);
+    80% {
+        transform: scale(0.99) translateY(1px);
     }
     100% {
         opacity: 1;
@@ -127,10 +127,10 @@
 /* ----- Floating ----- */
 @keyframes float {
     0%, 100% {
-        transform: translateY(0px);
+        transform: translateY(0) rotate(0deg);
     }
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-7px) rotate(1.5deg);
     }
 }
 
@@ -217,19 +217,19 @@
 /* ----- Heart Float ----- */
 @keyframes float-heart {
     0% {
-        transform: translateY(0) rotate(0deg) scale(0.5);
+        transform: translateY(0) rotate(0deg) scale(0.55);
         opacity: 0;
     }
-    15% {
-        opacity: 1;
-        transform: translateY(-20px) rotate(5deg) scale(1);
+    12% {
+        opacity: 0.9;
+        transform: translateY(-16px) rotate(3deg) scale(1);
     }
-    85% {
-        opacity: 1;
-        transform: translateY(-60px) rotate(-3deg) scale(1);
+    70% {
+        opacity: 0.7;
+        transform: translateY(-75px) rotate(-2deg) scale(1.04);
     }
     100% {
-        transform: translateY(-90px) rotate(5deg) scale(0.5);
+        transform: translateY(-115px) rotate(5deg) scale(0.65);
         opacity: 0;
     }
 }
@@ -298,10 +298,10 @@
 /* ----- Heartbeat ----- */
 @keyframes heartbeat {
     0%, 100% { transform: scale(1); }
-    15% { transform: scale(1.2); }
-    30% { transform: scale(0.92); }
-    45% { transform: scale(1.08); }
-    60% { transform: scale(1); }
+    14% { transform: scale(1.1); }
+    28% { transform: scale(0.97); }
+    42% { transform: scale(1.05); }
+    56% { transform: scale(1); }
 }
 
 .heartbeat {
@@ -313,10 +313,9 @@
 /* ----- Wiggle ----- */
 @keyframes wiggle {
     0%, 100% { transform: rotate(0deg) scale(1); }
-    20% { transform: rotate(-8deg) scale(1.05); }
-    40% { transform: rotate(7deg) scale(1.02); }
-    60% { transform: rotate(-5deg) scale(1.05); }
-    80% { transform: rotate(4deg) scale(1.02); }
+    25% { transform: rotate(-4deg) scale(1.03); }
+    50% { transform: rotate(3deg) scale(1.015); }
+    75% { transform: rotate(-2deg) scale(1.02); }
 }
 
 .wiggle-hover:hover .emote {
@@ -342,13 +341,13 @@
 /* ----- Ambient Drift ----- */
 @keyframes ambient-drift {
     0% {
-        transform: translateY(110vh) translateX(0) rotate(0deg) scale(0.5);
+        transform: translateY(110vh) translateX(0) rotate(0deg) scale(0.55);
         opacity: 0;
     }
-    10% { opacity: 0.8; }
-    90% { opacity: 0.8; }
+    10% { opacity: 0.7; }
+    90% { opacity: 0.5; }
     100% {
-        transform: translateY(-10vh) translateX(var(--drift-x, 30px)) rotate(var(--drift-rot, 20deg)) scale(1);
+        transform: translateY(-12vh) translateX(var(--drift-x, 36px)) rotate(var(--drift-rot, 16deg)) scale(1.04);
         opacity: 0;
     }
 }
@@ -361,7 +360,7 @@
     z-index: 1;
     will-change: transform, opacity;
     animation-name: ambient-drift;
-    animation-timing-function: linear;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
     animation-iteration-count: infinite;
     user-select: none;
 }
@@ -369,11 +368,11 @@
 /* ----- Heart Burst ----- */
 @keyframes heart-burst {
     0% {
-        transform: translate(-50%, -50%) scale(0.3);
+        transform: translate(-50%, -50%) scale(0.45);
         opacity: 1;
     }
     100% {
-        transform: translate(calc(-50% + var(--bx, 0px)), calc(-50% + var(--by, -50px))) scale(1.1);
+        transform: translate(calc(-50% + var(--bx, 0px)), calc(-50% + var(--by, -48px))) scale(1.12);
         opacity: 0;
     }
 }
@@ -382,7 +381,7 @@
     position: fixed;
     pointer-events: none;
     z-index: 9999;
-    animation: heart-burst 0.8s ease-out forwards;
+    animation: heart-burst 1.05s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 /* ----- Shimmer Text ----- */
@@ -448,24 +447,24 @@
 /* Gentle pulse glow for primary elements */
 @keyframes soft-love-glow {
     0%, 100% {
-        box-shadow: 0 0 0 0 rgba(255, 107, 157, 0.25), 0 4px 20px rgba(77, 166, 255, 0.12);
+        box-shadow: 0 0 0 0 rgba(255, 107, 157, 0.15), 0 4px 16px rgba(77, 166, 255, 0.1);
     }
     50% {
-        box-shadow: 0 0 0 12px rgba(255, 107, 157, 0), 0 8px 28px rgba(77, 166, 255, 0.2);
+        box-shadow: 0 0 0 8px rgba(255, 107, 157, 0), 0 6px 22px rgba(77, 166, 255, 0.14);
     }
 }
 
-.btn-primary {
-    animation: soft-love-glow 3s ease-in-out infinite;
+.btn-primary:hover:not(:disabled) {
+    /* glow only on hover — saves continuous repaint */
 }
 
 /* Heartbeat stronger for romantic moments */
 @keyframes heartbeat-strong {
     0%, 100% { transform: scale(1); }
-    12% { transform: scale(1.22); }
-    24% { transform: scale(0.94); }
-    36% { transform: scale(1.14); }
-    48% { transform: scale(1); }
+    14% { transform: scale(1.12); }
+    28% { transform: scale(0.97); }
+    42% { transform: scale(1.06); }
+    56% { transform: scale(1); }
 }
 
 .lovecalc-heart-big,
@@ -496,21 +495,12 @@
     }
 }
 
-.question-box.glass,
-.quiz-container,
-.lovecalc-box,
-.letter-paper,
-.unlock-content {
-    animation: love-border-pulse 4s ease-in-out infinite;
-}
+/* border pulse disabled for performance */
 
-/* Ambient emote slightly larger & softer on light bg */
 .ambient-emote {
-    filter: drop-shadow(0 2px 6px rgba(77, 166, 255, 0.25));
-    opacity: 0.85;
+    opacity: 0.8;
 }
 
-/* Heart burst more visible on light */
 .heart-burst-particle {
-    filter: drop-shadow(0 2px 4px rgba(255, 107, 157, 0.4));
+    /* no drop-shadow for perf */
 }

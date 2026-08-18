@@ -88,7 +88,7 @@ function createUnlockParticles() {
     const colors = ['#4DA6FF', '#1677D2', '#FF6B6B', '#FFD93D', '#6BCB77', '#FF85A2'];
     const heartEmotes = ['❤️', '💙', '💕', '✨'];
 
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 18; i++) {
         setTimeout(() => {
             const angle = Math.random() * Math.PI * 2;
             const distance = 150 + Math.random() * 250;

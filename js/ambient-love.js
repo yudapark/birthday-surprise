@@ -25,7 +25,7 @@ function initAmbientLove() {
     
     // Spawn emote pertama dan mulai interval
     spawnAmbientEmote(layer);
-    ambientIntervalId = setInterval(() => spawnAmbientEmote(layer), 1400);
+    ambientIntervalId = setInterval(() => spawnAmbientEmote(layer), 3200);
 
     // Tap-anywhere heart burst
     document.addEventListener('click', handleLoveClick);
@@ -57,7 +57,7 @@ function spawnAmbientEmote(layer) {
     const startX = Math.random() * window.innerWidth;
     const driftX = (Math.random() - 0.5) * 160;
     const rot = (Math.random() - 0.5) * 60;
-    const duration = 10 + Math.random() * 8;
+    const duration = 14 + Math.random() * 10;
     const size = 14 + Math.random() * 16;
 
     el.style.left = startX + 'px';
@@ -88,14 +88,14 @@ function handleLoveClick(e) {
 function createHeartBurst(x, y) {
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    const count = 8;
+    const count = 5;
     for (let i = 0; i < count; i++) {
         const particle = document.createElement('span');
         particle.className = 'heart-burst-particle';
         particle.textContent = BURST_EMOTES[Math.floor(Math.random() * BURST_EMOTES.length)];
 
         const angle = (Math.PI * 2 * i) / count + Math.random() * 0.5;
-        const distance = 30 + Math.random() * 40;
+        const distance = 26 + Math.random() * 34;
         const bx = Math.cos(angle) * distance;
         const by = Math.sin(angle) * distance - 20;
 

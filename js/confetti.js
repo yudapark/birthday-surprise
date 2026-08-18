@@ -42,7 +42,7 @@ function startConfetti() {
 
     const colors = ['#4DA6FF', '#7EC8FF', '#FF6B9D', '#FF4D6D', '#FFB6C1', '#87CEEB', '#FF85A2', '#A0D2F2', '#FFD700'];
 
-    for (let i = 0; i < 150; i++) {
+    for (let i = 0; i < 70; i++) {
         confettiPieces.push({
             x: Math.random() * confettiCanvas.width,
             y: Math.random() * confettiCanvas.height - confettiCanvas.height,
@@ -50,9 +50,9 @@ function startConfetti() {
             h: 4 + Math.random() * 6,
             color: colors[Math.floor(Math.random() * colors.length)],
             vx: (Math.random() - 0.5) * 3,
-            vy: 1.5 + Math.random() * 3,
+            vy: 1.0 + Math.random() * 2.0,
             rotation: Math.random() * Math.PI * 2,
-            rotationSpeed: (Math.random() - 0.5) * 0.05,
+            rotationSpeed: (Math.random() - 0.5) * 0.03,
             opacity: 0.7 + Math.random() * 0.3
         });
     }
@@ -70,7 +70,7 @@ function animateConfetti() {
     confettiPieces.forEach(p => {
         p.x += p.vx;
         p.y += p.vy;
-        p.vy += 0.03;
+        p.vy += 0.018;
         p.rotation += p.rotationSpeed;
 
         if (p.y > confettiCanvas.height + 50) {

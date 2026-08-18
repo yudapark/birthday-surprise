@@ -7,11 +7,11 @@ const birthdayConfig = {
     girlfriendName: "Sayangkuu",
     yourName: "Akuuuu Sayang muuu",
 
-    // Password untuk unlock
+    // Password untuk unlock    
     password: "190810",
 
     // Tanggal pertama kali bertemu
-    firstMeeting: "12 Januari 2024",
+    firstMeeting: "",
 
     // Path ke file musik
     music: "assets/music/birthday.mp3",
@@ -47,27 +47,27 @@ const birthdayConfig = {
     // Timeline data
     timeline: [
         {
-            date: "12 Januari 2024",
-            title: "Pertama Kali Bertemu",
-            description: "Hari pertama kita bertemu. Aku masih ingat betapa berdebar-debarnya hatiku saat itu.",
+            date: "1",
+            title: "Di waktu itu",
+            description: "Aku masih ingat betapa berdebar-debarnya hatiku saat itu.",
             image: "assets/images/photo01.jpg"
         },
         {
-            date: "14 Februari 2024",
+            date: "2",
             title: "Valentine Pertama",
             description: "Valentine pertama kita berdua. Momen yang tak akan pernah aku lupakan.",
             image: "assets/images/photo02.jpg"
         },
         {
-            date: "17 Maret 2024",
-            title: "Kencan Pertama",
-            description: "Kencan pertama kita. Senyummu membuat hari itu terasa sempurna.",
+            date: "3",
+            title: "Karena Senyummu",
+            description: "Senyummu membuat hari itu terasa sempurna.",
             image: "assets/images/photo03.jpg"
         },
         {
-            date: "1 Mei 2024",
-            title: "Bulan Pertama",
-            description: "Satu bulan penuh bersama. Setiap hari bersamamu adalah anugerah.",
+            date: "4",
+            title: "Hari-Hari Kita Bersama",
+            description: "SSetiap hari bersamamu adalah anugerah.",
             image: "assets/images/photo04.jpg"
         }
     ],
